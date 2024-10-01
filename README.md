@@ -10,3 +10,11 @@
 - **User Access and Roles**
 - **Room Search and Availability**
 - **Instructor and Course Management**
+
+## RDBMS schema design
+<p align="center">
+  <img src="resource/erd.png" alt="Schema Design" width="337"/>
+   <br/>
+  <em>Main Menu</em>
+   <br/>
+</p>
