@@ -15,6 +15,6 @@
 <p align="center">
   <img src="resource/erd.png" alt="Schema Design" width="337"/>
    <br/>
-  <em>Main Menu</em>
+  <em>Schema Design</em>
    <br/>
 </p>
