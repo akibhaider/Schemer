@@ -25,7 +25,7 @@
   <em>Schema Design(Entity-Relationship Diagram)</em>
    <br/>
   <br/>
-  <img src="resource/sd.png" alt="Sequence Diagram" width="900"/>
+  <img src="resource/sd.pn" alt="Sequence Diagram" width="900"/>
    <br/>
   <em>Schema Design(Sequence Diagram)</em>
    <br/>
