@@ -13,7 +13,7 @@
 
 ## RDBMS schema design
 <p align="center">
-  <img src="resource/erd.png" alt="Schema Design" width="337"/>
+  <img src="resource/erd.png" alt="Schema Design" width="600"/>
    <br/>
   <em>Schema Design</em>
    <br/>
