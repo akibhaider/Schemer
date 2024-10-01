@@ -1,7 +1,7 @@
-# Shemer
+# Schemer
  Schemer is a routine management system that automates university scheduling. It focuses on fixing times, managing classrooms, and finding available rooms, using Relational Database to ensure seamless scheduling and resource allocation.
 
-![Contributors](https://img.shields.io/github/contributors/akibhaider/Shemer-?color=darkgreen) ![Forks](https://img.shields.io/github/forks/akibhaider/BattleShip_Guessing_Game_JavaFx-?style=social) ![Stargazers](https://img.shields.io/github/stars/akibhaider/BattleShip_Guessing_Game_JavaFx-?style=social) ![Issues](https://img.shields.io/github/issues/akibhaider/BattleShip_Guessing_Game_JavaFx-?color=brown) 
+![Contributors](https://img.shields.io/github/contributors/akibhaider/Schemer-?color=darkgreen) ![Forks](https://img.shields.io/github/forks/akibhaider/Schemer-?style=social) ![Stargazers](https://img.shields.io/github/stars/akibhaider/Schemer-?style=social) ![Issues](https://img.shields.io/github/issues/akibhaider/Schemer-?color=brown) 
 
 ## Features
 - **Automated Schedule Generation**
