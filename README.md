@@ -22,6 +22,12 @@
 <p align="center">
   <img src="resource/erd.png" alt="Schema Design" width="900"/>
    <br/>
-  <em>Schema Design</em>
+  <em>Schema Design(Entity-Relationship Diagram)</em>
+   <br/>
+  <br/>
+  <img src="resource/sd.png" alt="Sequence Diagram" width="900"/>
+   <br/>
+  <em>Schema Design(Sequence Diagram)</em>
    <br/>
 </p>
+
