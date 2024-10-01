@@ -11,6 +11,13 @@
 - **Room Search and Availability**
 - **Instructor and Course Management**
 
+## Relational Database Utilization
+- **Tables and Relationships**
+- **Primary and Foreign Keys**
+- **Indexes**
+- **Transactions**
+- **Views and Stored Procedure**
+
 ## RDBMS schema design
 <p align="center">
   <img src="resource/erd.png" alt="Schema Design" width="900"/>
