@@ -1,25 +1,35 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const RoutineList = () => {
   const [routines, setRoutines] = useState([]);
 
+  const fetchRoutines = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/api/routines');
+      setRoutines(response.data);
+    } catch (error) {
+      console.error('Error fetching routines:', error);
+    }
+  };
+
   useEffect(() => {
-    axios.get("http://localhost:5000/api/routines")
-      .then((response) => setRoutines(response.data))
-      .catch((error) => console.error("Error fetching routines:", error));
+    fetchRoutines();
   }, []);
 
   return (
     <div>
-      <h1>Routine List</h1>
-      <ul>
-        {routines.map((routine) => (
-          <li key={routine.id}>
-            {routine.department} - {routine.course} ({routine.day_of_week} {routine.start_time} - {routine.end_time})
-          </li>
-        ))}
-      </ul>
+      {routines.length ? (
+        routines.map((routine) => (
+          <div key={routine.id}>
+            <h2>{routine.course}</h2>
+            <p>{routine.instructor}</p>
+            <p>{routine.time} - {routine.day}</p>
+          </div>
+        ))
+      ) : (
+        <p>No routines found</p>
+      )}
     </div>
   );
 };

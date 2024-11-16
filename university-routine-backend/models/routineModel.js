@@ -1,8 +1,13 @@
-const pool = require("../db");
+import { db } from '../db/index.js';
 
-const getRoutine = async () => {
-  const result = await pool.query("SELECT * FROM routines");
-  return result.rows;
+export const getAllRoutines = async () => {
+  return await db.any('SELECT * FROM routines');
 };
 
-module.exports = { getRoutine };
+export const createRoutine = async (routine) => {
+  const { course, instructor, time, day } = routine;
+  return await db.none(
+    'INSERT INTO routines (course, instructor, time, day) VALUES ($1, $2, $3, $4)',
+    [course, instructor, time, day]
+  );
+};
