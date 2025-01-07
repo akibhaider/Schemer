@@ -21,7 +21,8 @@ CREATE TABLE courses (
     course_id SERIAL PRIMARY KEY,
     course_code VARCHAR(20) UNIQUE NOT NULL,
     course_name VARCHAR(100) NOT NULL,
-    credit_hours DECIMAL(3,1) NOT NULL CHECK (credit_hours > 0)
+    credit_hours DECIMAL(3,1) NOT NULL CHECK (credit_hours > 0 and credit_hours <= 3),
+    allocation_availability INTEGER NOT NULL CHECK (allocation_availability > 0 and allocation_availability < 3)
 );
 
 -- Rooms Table
@@ -88,20 +89,20 @@ INSERT INTO days (day_name, day_order) VALUES
 
 -- Insert time slots
 INSERT INTO time_slots (start_time, end_time, slot_order) VALUES
-    ('08:30:00', '10:00:00', 1),
-    ('10:30:00', '12:00:00', 2),
-    ('13:30:00', '15:00:00', 3),
-    ('15:30:00', '17:00:00', 4);
+    ('08:00:00', '09:15:00', 1),
+    ('09:15:00', '10:30:00', 2),
+    ('10:30:00', '11:45:00', 3),
+    ('11:45:00', '13:00:00', 4);
 
 -- Insert rooms with capacity and lab status
 INSERT INTO rooms (room_number, capacity, is_lab) VALUES
     ('301', 60, false),
     ('302', 60, false),
-    ('303', 60, false),
-    ('304', 30, true),  -- Lab
-    ('305', 30, true),  -- Lab
-    ('306', 60, false),
-    ('307', 60, false);
+    ('304', 60, false),
+    ('508', 60, false),  
+    ('510', 60, false),
+    ('L-1', 30, True), -- Lab
+    ('L-2', 30, True);  -- Lab
 
 -- Drop existing function if exists
 DROP FUNCTION IF EXISTS get_available_rooms(INTEGER, INTEGER);
@@ -221,10 +222,7 @@ INSERT INTO teachers (name, email) VALUES
     ('Prof. Amanda White', 'amanda.white@university.edu');
 
 -- Insert sample courses
-INSERT INTO courses (course_code, course_name, credit_hours) VALUES
+INSERT INTO courses (course_code, course_name, credit_hours, allocation_availability) VALUES
     -- Computer Science Courses
-    ('CSE101', 'Introduction to Programming', 3.0),
-    ('CSE201', 'Data Structures and Algorithms', 3.0),
-    ('CSE301', 'Database Management Systems', 3.0),
-    ('CSE302', 'Operating Systems', 3.0),
-    ('CSE401', 'Artificial Intelligence', 3.0);
+    ('CSE101', 'Introduction to Programming', 3.0, 2),
+    ('CSE401', 'Artificial Intelligence', 3.0, 2);
