@@ -35,6 +35,40 @@ app.get("/api/time-slots", async (req, res) => {
     }
 });
 
+// Route to fetch teacher name by course_id
+app.get("/api/get-teacher-by-course/:course_id", async (req, res) => {
+    const { course_id } = req.params;
+
+    try {
+        // Query to fetch the teacher_id from the allocations table for the given course_id
+        const allocation = await pool.query(
+            `SELECT teacher_id FROM allocations WHERE course_id = $1 LIMIT 1`,
+            [course_id]
+        );
+
+        if (allocation.rows.length === 0) {
+            return res.json({ teacher_name: null }); // No allocation exists for this course
+        }
+
+        const teacher_id = allocation.rows[0].teacher_id;
+
+        // Query to fetch the teacher name from the teachers table
+        const teacher = await pool.query(
+            `SELECT name FROM teachers WHERE teacher_id = $1`,
+            [teacher_id]
+        );
+
+        if (teacher.rows.length === 0) {
+            return res.status(404).json({ error: "Teacher not found" });
+        }
+
+        res.json({ teacher_name: teacher.rows[0].name });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json({ error: "Server error" });
+    }
+});
+
 // Room availability routes
 app.get("/api/room-availability", async (req, res) => {
     try {

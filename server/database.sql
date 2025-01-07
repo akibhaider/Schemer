@@ -218,14 +218,6 @@ $$ LANGUAGE plpgsql;
 -- Insert sample teachers
 INSERT INTO teachers (name, email) VALUES
     ('Dr. John Smith', 'john.smith@university.edu'),
-    ('Prof. Sarah Johnson', 'sarah.johnson@university.edu'),
-    ('Dr. Michael Chen', 'michael.chen@university.edu'),
-    ('Prof. Emily Brown', 'emily.brown@university.edu'),
-    ('Dr. David Wilson', 'david.wilson@university.edu'),
-    ('Prof. Maria Garcia', 'maria.garcia@university.edu'),
-    ('Dr. James Taylor', 'james.taylor@university.edu'),
-    ('Prof. Lisa Anderson', 'lisa.anderson@university.edu'),
-    ('Dr. Robert Martinez', 'robert.martinez@university.edu'),
     ('Prof. Amanda White', 'amanda.white@university.edu');
 
 -- Insert sample courses
